@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <title>Document</title>
+
+
+    <style>
+        html, body {
+  height: 100%;
+  margin: 0;
+}
+.grid2x2 {
+  min-height: 100%;
+  display: none;
+  flex-wrap: wrap;
+  flex-direction: row;
+  width: 50vw;
+  height: 50vh;
+}
+.grid2x2 > button {
+  display: flex; 
+  flex-basis: calc(50% - 40px);  
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+ ;
+}
+.grid2x2 > div > div {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.box { margin: 20px; }
+.box1 { background-color: red; }
+.box2 { background-color: rgb(0, 255, 55); }
+.box3 { background-color: rgb(1, 208, 245); }
+.box4 { background-color: rgb(217, 255, 0); }
+    </style>
+</head>
+<body>
+
+    <center>
+<input type="text" id="trainerName" onblur="start()" style="margin-top: 10vh;">
+
+    <p id="demo">Enter you name</p>
+
+    <h1 id="ngalan"></h1>
+
+    <div class="grid2x2">
+        <button class="box box1 Pokemon"  value="Charmander" > <b> Charmander </b></button>
+        <button class="box box2 Pokemon"  value="Bulbasaur" > <b> Bulbasaur </b></button>
+        <button class="box box3 Pokemon"  value="Squirtle" ><b> Squirtle </b></button>
+        <button class="box box4 Pokemon"  value="Pikachu" > <b> Pikachu </b></button>
+      </div>
+
+      <button onclick="showCard()" id="continue" style="display: none;">Start Journey</button>
+
+
+      <div class="w3-card-4 w3-margin" style="width:30%; display: none;" id="pkm_card">
+        <div class="w3-display-container w3-text-white">
+          <img src="img/274702_Gold.png" alt="card" style="width:100%">
+          <div class="w3-xlarge w3-display-bottomleft w3-padding">Pkm Trainer: <b id="show_name"></b> </div>
+        </div>
+        <div class="w3-row">
+          <div class="w3-third w3-center">
+            <h3 id="pkmon">Pkm:</h3>
+            <img src="img/file-pokeball-png-0.png" alt="pokemon" style="width:80px">
+          </div>
+          <div class="w3-third w3-center">
+            <h3>HP: <span id="show_hp"></span> </h3>
+            <img src="img/download.png" alt="hp" style="width:80px">
+          </div>
+          <div class="w3-third w3-center w3-margin-bottom">
+            <h3>SP: <span id="show_sp"></span> </h3>
+            <img src="img/188958.png" alt="sp" style="width:80px">
+          </div>
+        </div>
+
+        <div class="w3-row">
+            <div class="w3-half w3-center">
+              <h3 id="status"></h3>
+              <img src="img/102-1024784_pokemon-egg-png-transparent-png-removebg-preview.png" alt="status" style="width:80px">
+            </div>
+            <div class="w3-third w3-center">
+              <h3 id="state"></h3>
+              <img src="img/communityIcon_gjw0pkz01bm61.jpg" alt="cloud" style="width:80px">
+            </div>
+            <!-- <div class="w3-third w3-center w3-margin-bottom">
+              <h3>WED</h3>
+              <img src="img_weather_clouds.jpg" alt="clouds" style="width:80px">
+            </div> -->
+          </div>
+
+      </div>
+
+      <button id="start_journe" style="display: none;" onclick="chooseBtl()">Start Battle!!</button>
+
+      <div class="grid2x2">
+        <button class="box box1 trainer"  value="Fire" > <b> Fire gym </b></button>
+        <button class="box box2 trainer"  value="Grass" > <b> Grass gym </b></button>
+        <button class="box box3 trainer"  value="Water" ><b> Water gym </b></button>
+        <button class="box box4 trainer"  value="Electric" > <b> Electric gym </b></button>
+      </div>
+
+      <div id="battle_area" style="display: none;">
+        <span >
+
+        </span>
+      </div>
+      
+    </center>
+
+    <script src="game.js" defer></script>
+
+</body>
+
+</html>
